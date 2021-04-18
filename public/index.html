@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+
+<html lang="zh_CN">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="renderer" content="webkit">
+    <title>北京工业大学 统一身份认证平台</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="static/css/cas.css" />
+    <link rel="stylesheet" href="static/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="static/css/font-awesome.min.css" />
+
+    <link rel="stylesheet" href="static/css/login.css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script type="text/javascript" src="static/js/html5shiv.js"></script>
+    <script type="text/javascript" src="static/js/respond.min.js"></script>
+<![endif]-->
+    <!--
+<style type="text/css">
+  html {-webkit-filter: grayscale(100%);filter:progid:DXImageTransform.Microsoft.BasicImage(graysale=1);}
+</style>
+-->
+
+</head>
+
+
+
+<body oncontextmenu="return false;" onselectstart="return false;" ondragstart="return false;">
+
+    <!-- 头部 -->
+    <div class="login-bg sj-bg">
+
+        <div class="container">
+            <div class="logo" style="height:14%">
+                <img src="static/picture/dl-logo.png" class="center-block img-responsive" style="height:80px">
+            </div>
+
+            <div class="login-content" style="width:33%;height:260px;padding-top:0px;margin-top:20%;margin-left: 63%;">
+                <div class="login-list" style="padding-top:5px;padding-bottom:5px;margin-top:70%;margin-bottom:0px">
+                    <form id="fm1" class="form-horizontal" action="/register" method="post">
+                        <div class="form-group msg-wrap  " style="padding-top:10px">
+                            <div class="text-left msg-error  hidden">
+
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="padding-top:10px;margin-top:8%">
+                            <label class="col-sm-3 col-xs-3 pad-r0 control-label" for="username"
+                                style="white-space:nowrap;padding-top: 10px">
+                                用户名
+                            </label>
+                            <div class="col-sm-8 col-xs-9">
+
+
+
+
+                                <input id="username" name="username" class="required form-username form-control"
+                                    tabindex="1" placeholder="用户名..." accesskey="u" type="text" value="" size="25"
+                                    autocomplete="off" />
+
+
+                            </div>
+                        </div>
+
+                        <div class="form-group" style="padding-top:0px;padding-bottom:5px;margin-bottom:0px">
+                            <label class="col-sm-3 col-xs-3 control-label" for="form-password" style="padding-top:10px">
+                                密&nbsp;&nbsp;码
+                            </label>
+                            <div class="col-sm-8 col-xs-9">
+
+                                <input id="password" name="password" class="required form-password form-control"
+                                    tabindex="2" placeholder="密　码..." accesskey="p" type="password" value="" size="25"
+                                    autocomplete="off" />
+                                <span id="capslock-on" style="display: none;">
+                                    <p> <img src="static/picture/warning.png" valign="top">
+                                        CAPSLOCK键已打开！
+                                    </p>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group  dl-btn" style="padding-top:0px;padding-bottom:5px;margin-bottom:0px">
+                            <input type="hidden" name="lt"
+                                value="LT-2562237-sJZGgLdI7uy5ox5cX3eGgHmFp29Zwv-cas.bjut.edu.cn" />
+                            <input type="hidden" name="execution"
+                                value="1289508c-7dd7-4215-943f-021988b19886_ZXlKaGJHY2lPaUpJVXpVeE1pSjkuY0RaSVpsZ3hNV0ZwWnpKek1WWjRlbk0xU0VNNFZXTllPVFJzU2pWSWMxUXlUMWR4TUdvckt6UnBaRFYyTjJ0UVRtOVRVMlZDY2paeE9IQnlkR1ZMU2pSVlIwbHlXRkZqYUZWNlNsa3dUbGhpTW1oTFlsVjJWQzlKY1VWMGFVNWxXVTlUYUVkeVdtOXBOVXhtT1VsaWNHNXJPR1pGWW5wbFR6QkxRbEZKVmt0UmJUWlliM0YzWTNZeE5VbEtNVWxqVjAxQlJGRllXbWhrSzNoWmJqUkZZV1UyYnk5NVIycElLMnhLUmtFMFMxWjJiRzFCU1RaR2MwMVljVUpRUVdVdmIzVmhiRFowV1hrd1F6bFNha1pDUkVKeFowaFRXV0k1VEU1QlJFWnVhVnBPY201RE5rUjRNSFZLT1RNeFJqbG1XakZUUW1sQlFtVmpjR013ZHpjNWVGY3dSalprVVU5WVVIWnRjRTlEY210UFFWUlNSV0pLTUU0dk0zUTBaMmhTT0Vsck1tNU5WMG8wYlc5M1RUUnllUzlxTDNGc015dDJNVXQzVkdsQmJUQkdlVmRtV0hsUk5rdDFTa2xGWTNkbVV6RmxVRmhCVFhSUmJ6ZDNSMHhTVkRBMVpuWlNLMmRGUkU5UlZtSkZRMFZ6Wm5FMWQyMHlPWEk0VEZkYWMzaDFNbFJzYnk4dlRrMVBlVU5CWnpGcFYzRXdObUZ4Y1ZBMFN6QnFUV1V4UzBsbmJUSnJTamxaZFRKSE5ISnNXRE00U1c5SlRrYzVLM2hSUzA5RlZubFFTa2hxU0hSaU5IcHRjRTFSWmtSRU9IWnBSRWt3Y0RKTVp5dHBhMlJEUWtSbFVVMXRialZ4Um5RNWNrdFFTSEZWZEhwU00wZzVkMGt5ZVhkd1dreG1UMU5MVjA1SU1sTjZTbE4zTHpjdldYcGpkMU15ZVhOSGFtSktkemR4VERObGNqZGhTRU5xUlRSU2JIbHRZMDFOYVU1VlpubHllRlJvY201WFQyUTBOa012TldVNFN5dHhWek5MTjFOekt6VlpjV3hQTjJ0d056TkhkMkUzVDNSMEwyOW5PRWxJYmk5RE5rUjZLMDlIYVZRcmJEVjRPR1ZXWWxSWVkzUlRTa3B5YkhSWU9Gb3hjRWR0SzBkak4ycGFUR3hPYVhsRFRGUkVNVEoxZUdsM2FEQlhhbXhSU0hOemVqbHhiRUZXV0ZBd00yOHpkMjFTWmtONk5qVkxPVGhhYm1wRloyUlFiMDE2VEdJMVIyZDJSMXBLUnpKS1YzQkhTbUpPY210NFEzSlVaa1J1ZFUxc1VHdE5kM0ZHZUdnNU1EVTRaakppUlRCRmFHUmxhazFPVHpoV2JWVnNOWGRZUTIxa2R6Vm9XVVZ3YUVWWE1qQjVRV05YWVcxNk1uZFdVM0lyV0ZGRVFsbHpORGhFZFdkQ1JYQnVWazlHY25CT2JFMUhjRm9yZEdwRGFVTXJjbmQyV1VSMGJqRk1SR1ZLTDNwVmJXdEdkMVJMV0VWM1QxZGFaa0pYWWtScmJsWjFkVVp3VERCUlZsUk1kR0pTV0VZMU1pdFhWMlo0YlhCeFdIaHBRMkpKTUV4Q1dHOXdiRVZqZFRjcmVISnpSRmxQTVRacVJWZ3ZaSGRsUzJWNFFUaGFTRlJIT1ZWUE0zRm9XRzlrYm1Jd2QwMHlka3hWYldSS1JGcEdibGRJUVZrdlVqUk5NSGh1U0ZkMGVHUk9RMlpGU1doRFFqSkxjRmhOY1hGT1YwMWhiamRWZVhwdE0weEZiWEJhVjI4dmFGQlZLek5LWkhodVRWVkRPWEZyVFVSVk5FVnFRamxrTjFVckswMXNiVGhIUVVNMGNIRXZhV0prY0hSTGQyMDBhbGxOTm10eE5WbEZZVnBtTjFoQ2FVa3JXR3d5VFdKQ1RqYzJMM3BQZWt4MlNsSkllRnA1TVRSSE1UbEpVemxKTm5sTk9XSmlVWGQ1VDBWSWN6SkZTVGR2VG5jM2NUUjJlRGhLWmxScmVXbEthelJXTDFOWEwySlJjbTVoT0ZCQmJsVklOUzlzVW5CMWRWVXpkMDR6YVZwU2FVSXpSakZ4TVVObVZWaFVVbEZ4VVdWblJUWmhPRTlrY1N0UVdqTnBPRTlFTlRNdmJXcFNlR0pSWkVFMWVFVlpaVmw2V2pscWFrMUNZVEJ1VGs1MU0waEVTMUp0TmtjclRrUkxTRkVyVG5kc05YWkRXRnBNVERWMGRuWTFhM0p5T0RNcmJVbFhkSHBQV0U1VFVXVXphbEZPVWpWNVNuUlpaRTVCYlhkc1NTOVFjbVJ2VW1Oa1ExWnNhVU5rTVNzNU1XdzJPRWwxT0ZKV1JuSTJWWFpLYmtGTWNFOHhhREU0YW1zME5uRXlRV2c1UVVkMGRYaHBlRXhYTDFWeE1XcHFNWEozZDI4MWJqWTNVMUZPTkcxb1ZXVnBWMEZPVFUxSU9YaG1VbFJQVEdkUFptNWxlRTE2Ym5JM2FHWm5iSFZOZEhGSlRHcGlOMjVEVlZWSFMwWm9SRGhGVWtwc01ISjNiMnRSVFVabWRUSlZhVWRRYkVwWVFtUm1jVEIxVTFKV01ESkZNMFp5VlVZeVRITnFSVTV6U1RGVVJYRmFjamhhTTNKbWFUbEhVMmh4UlVwT1JrSXhPVTFwWVV4VmJXb3pWSFpUWjFSRFdVTnVUVFpETlM5VldFZDZjMkp1U2xsUGJVMDFNVkZMYlZaNmIweHpZbkpyVjNsdkwzaG1TSEo2WTA1amJrUnNLMGh0Vm1ZemFDOTJSSEZhTVhCeFUyVm9jRTEzWkdaeVVUVnROVUpyTjFVck9FNVRVM1ZhVFd4TlZVcEdWbVZFTjFWSk5XdExjQ3RMYUU1blFsVnRiak5sUjFWS1ltRmpjR2RXYTNwRE1HcHVkVXAyZEhGeFMzWk5ObXdyWm1KRldESTJaMmhRT1ZoNldHaE1jV2x4UW1kc2VqUmtTQzl0U1d0NllWRmtZblZpVnpORlYzSjJRblF2Um5kcGJFeFFZelJaTVRSVWVWZEdLMkpVVVd4QlRFdG1hbU55WVRKS2NGaFNhRGc1Um5oMU1FSnNlakZOYms1V1QzaFBNVzFUZVd4dEwwUmtUekpZYzFsclJuaFlaMHh3V2tOM0t6TkNRVUV5TkZKUU5HMHpZMlZoU1hoNWVGUnJZV2swTkVnM1NFNXNRakpsTDBSS1QzcHJSbUZNWXk5NU9Ib3dObUZvYmpaWWF6QnNSV3BTYVUxbGFqSjNabkp1UjA5R2RYVm1VbUp3UmxoeGNXSmlXa1ZrYmxWV2VTOHpjbGg0U0VOWVNsTkVXVlpNUVV0RmMzZHFNa1l4TkhOSVNXdFFiR2hYYW1kdmEyOWlObWR2Tm1GNlpuQmFkbVZHVXpOSVpVVnNWVVpFYkVKVVIwdzRkMGRhYnpBNGVHOXJWVGRMU0hsNGJGUjNVR05zVERBM1kxUnhXa0pwTld4Sk9XRTRNM1JFWjB4dmVuZHZiVTQwTUc1TlFtWnVVV0Z1ZVdOU2JpOUlka05ZVUN0MVFYRmtVbXRyTDNjMVoyY3pibFJDZGxOT2RUSktVbVJ6UVZCNGVEQkRaREJxYmtjNFdVUjJZVzlFZFVwa1drMUpaelJCTWk5NlkwWk1aVmhrYVdGU1ZtbEtka3gyZGxoeVUydFlTbU5vSzFKTllXRjVRazlPTlU5cWVFWnhiM2xJTlRsR2NHUkZORkV5VEdZMWFrRldjbVJTVFZWUlVqRnNjelJDTDNneFdtOUdVV0ZrTDNsNlRrc3lMMGMxYzA5SFZXUmpXbTFMWkRSamJWTlJlblZ1U1VSaGMxRkNlVGh2YW1GSWRUTTNORkIyY3pkQ1UzcFlMMlJyZDBZeksyWnlOa1UyV0Zsb1lsUlZVRzE0WVcxTlNsUmpSV3hqVDNGSGVFaE9Zazl3Y1Rsa2NXMWtRVWsxVG00ck1tOWtSbGxCV0Rka1ZHcFhhMGxZVFhGU1UyeHNRM0JITUhSRU9UQnlVVTFaVFZGSllXZDFTalZwVVhabk5YTTRXa0ZGZG1abE1UaFZiR1Z4ZVM4NVNqbEhibUZrUjFWNFFVY3lTVUpZYjI5QlRrOUtLM2d2TXl0aE5FVTViRXRpTTI1dlNHZEdPSEV6TDFWTGRVRlBWbkIwVFZsUFNWbEZNRTVTTkVjMmFYWXlkVkZFYmpGUFpsSXJaMUVyWVVSRlVrMHJLMlJoTldwSlFuY3laVnBzY0ZwNVVVdEZWa1o0VjJwUmJFOUxZekFyUjBoQmVYVlRLME00V0dzNWVWaE9Vak5rVDBocGJIWmtVM2QyTW14MlpuVjJkMlJzZUcxRlZITmxPRWt4VVZoeGNHSkRjM05NTkhSSFZIZE1iMFpQT0ZVeWRFazFZMHMwWTFwMVNXaEZkRFJOU2paUlFtRjJLMDR6Ykhob2VVbG1hRXBSVjJ0blYwUnljalZaY1ZVd09WUjBSekJUUVc1eVVDdE9OMGhwTXpVNGVVRkRXRVowZEdWaVJHcHNTRFJGUjBGYVNYRnJRbThyUlVkblQxbHpOWFY1YWs1SE1tb3phRmxJV1ZNNWNVOVlSMGg0UlZwSVpVRmpLemgxWW5wc2VqQXZjRXg0WnpOYWVtMDFSME41VVZGWk9GazRMMUExT1c5TVRUTlhVbTR5VTJWcGRHSXlhM1JVY21wUlJrSTVlVTU1T1hwYU0ySlFaM2t2YWk4M2FGSlpXbUl5VVdoYVRUWklhWGxXTlZScVdVNXJSVVEzZUdsMmNUTkNXa3A2TTFsV05EZFBNR1pYZFdrNWNEZ3JjRlJQVjBoNVJHaFBhSHAyVldkWmVURmtUbGhKU1d3MlJYRmxhakYyVFhGRE0xTTRkRkJqU0hoVEx5OUtRbVpSYjBacVRuVmxaSGhwTW5kc05rTkRSWEZVZFhwQ1FVbzNjRzlxYVVVMWQzRlVOVmRLYTFsMFMzZFRXR1JYV25GbVozZDVhRm94TVhSUWNuQnlSSEpCWjJkc1NXaFlhRmRYZEVWMlNHRm1UMFZ3YmtwbkwzZHJjMDVQTlc1amIxY3hRVmx5TUhWb2NFRnlkV0pCY0RSQ1RIcDFRWFpsUTBGcVVXNDFSSFY2VWtWTWVITmhhRWNyZGpnNGIxUjRia1Z0UlZjdlowWkhaVGxzY0UxUVJFWnVhMFYzY0V0RllrMTRUU3RPT1RaUFJtaERMemx6VXpaUllYTTBSVzlEU2tOT1V5OHlOazh6Tm5CWE5HRnZSVzAyY0RGQmRtSTVSbGhZU2swNVlWRnNOVTgyYkVaWWRVUllVbEo1VVdSSldEUlJOVXBMS3pkeFJHRm5jMUI0Y1ROYU9FSTRSMU5MVW5WeVNubFJQVDAuWUtTZUVMdElyMHZaNVlUcU02azl1QmwyZVdSNXpzRlAzNlJncWwtNVlEUWo1YVBNalBxWUlqX09idUF4bXg2VGR4UEFibWVMS2ZIUjU4ZFk2THM4dmc=" />
+                            <input type="hidden" name="_eventId" value="submit" />
+                            <button style="border-width: inherit;background: transparent;margin-top: 5px;"
+                                class="center-block img-responsive" name="submit" accesskey="l" tabindex="6"
+                                type="submit">
+
+                                <img src="static/picture/dl_an.png" class="center-block img-responsive">
+                            </button>
+                        </div>
+
+
+                        <div class="form-group" id="helpBtns"
+                            style="padding-top:0px;padding-bottom:5px;margin-bottom:0px">
+                            <div class="helpBtns" style="padding:0 40px">
+                                <a href="../../uploadFile/portalUse.pdf" style="color: black;"
+                                    target="_blank">用户帮助</a><label style="width:45px;"></label>
+                                <a href="https://czmm.bjut.edu.cn/" target="_blank"
+                                    style="color: black;float:none;">重置密码</a>
+                                <a href="loginHelp.html" target="_blank" style="color: black;float:right;">登录帮助</a>
+                            </div>
+                        </div>
+
+
+
+                        <div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer style="position:absolute; bottom: 0;width: 100%;" id="footer" role="contentinfo">
+        <div class="container">
+            <p class="powered-by"> <span class="footer">
+                    校址：北京市朝阳区平乐园100号 邮编：100124 京公网安备：110402430086 版权所有 © 北京工业大学
+                </span> </p>
+        </div>
+    </footer>
+
+    <!-- Javascript -->
+    <script type="text/javascript" src="static/js/jquery.min.js"></script>
+    <script type="text/javascript" src="static/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="static/js/head.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery.cookie.min.js"></script>
+    <script type="text/javascript" src="static/js/cas.js"></script>
+
+    <script type="text/javascript" src="static/js/jquery.backstretch.min.js"></script>
+    <script type="text/javascript" src="static/js/scripts.js"></script>
+
+
+</body>
+
+</html>

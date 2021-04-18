@@ -1,0 +1,17 @@
+{
+    "name": "server",
+    "version": "1.0.0",
+    "description": "The front-end and back-end of BJUT net service and infomation service login page.",
+    "main": "server.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "dev": "nodemon server.js",
+        "start": "node server.js"
+    },
+    "author": "Jimmy Fallon",
+    "license": "ISC",
+    "dependencies": {
+        "express": "^4.17.1",
+        "sqlite3": "^5.0.2"
+    }
+}
